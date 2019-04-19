@@ -18,6 +18,8 @@
  */
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
+#include <string.h>
 #include "SCLogger.h"
 
 //defines
@@ -53,7 +55,7 @@ static const char* logLevelString[] = {
  * @brief return log level as string
  * @author chifac08
  */
-static char* getLogLevel(LOG_LEVEL logLevel)
+static const char* getLogLevel(LOG_LEVEL logLevel)
 {
 	return logLevelString[logLevel];
 }
