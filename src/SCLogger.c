@@ -41,14 +41,14 @@ static logNode* logList = NULL;
 static logNode* lastNode = NULL;
 
 static const char* logLevelString[] = {
-		"OFF",
 		"FATAL",
 	    "ERROR",
 	    "WARN",
 	    "INFO",
 	    "DEBUG",
 		"TRACE",
-		"ALL"
+		"ALL",
+		"OFF"
 };
 
 /**

@@ -10,14 +10,14 @@
 
 typedef enum
 {
-	OFF=0,
 	FATAL=0,
     ERROR=1,
     WARN=2,
     INFO=3,
     DEBUG=4,
 	TRACE=5,
-	ALL=6
+	ALL=6,
+	OFF=7
 } LOG_LEVEL;
 
 typedef struct
