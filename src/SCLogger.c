@@ -4,7 +4,6 @@
  * Simple Logging Library for C/C++
  *
  * Supported Logging Level:
- *  # OFF
  *  # FATAL
  *  # ERROR
  *  # WARN
@@ -12,6 +11,7 @@
  *  # DEBUG
  *  # TRACE
  *  # ALL
+ *  # OFF
  *
  *  Created on: Apr 16, 2019
  *      Author: chifac08
@@ -259,7 +259,8 @@ int initLogging(LOG_CONFIG config)
 
 /**
  * @brief log message to log file
- * @param cpMessage
+ * @param logLevel  ... wanted log level (enum)
+ * @param cpMessage ... formatted message
  * @author chifac08
  */
 void logIt(LOG_LEVEL logLevel, char* cpMessage)
@@ -302,7 +303,9 @@ void destroyLogging()
 
 /**
  * @brief convert string to log level
+ * @param cpLogLevel ... log level to parse
  * @author chifac08
+ * @return log level enum
  */
 LOG_LEVEL parseLogLevel(char* cpLogLevel)
 {
