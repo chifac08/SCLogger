@@ -18,6 +18,7 @@
  */
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdarg.h>
 #include <time.h>
 #include <string.h>
 #include "SCLogger.h"
@@ -321,4 +322,19 @@ LOG_LEVEL parseLogLevel(char* cpLogLevel)
 	}
 
 	return logLevel;
+}
+
+/**
+ * @brief formats a log message
+ * @param cpReturn ... formatted message
+ * @param cpLogMessage ... log message with formatting parameters
+ * @author chifac08
+ */
+void formatLog(char* cpReturn, const char* cpLogMessage, ...)
+{
+	va_list arglist;
+
+	va_start(arglist, cpLogMessage);
+	vsprintf(cpReturn, cpLogMessage, arglist);
+	va_end(arglist);
 }
