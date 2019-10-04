@@ -327,14 +327,16 @@ LOG_LEVEL parseLogLevel(char* cpLogLevel)
 /**
  * @brief formats a log message
  * @param cpReturn ... formatted message
+ * @param iMsgLength ... length of the given array
  * @param cpLogMessage ... log message with formatting parameters
  * @author chifac08
  */
-void formatLog(char* cpReturn, const char* cpLogMessage, ...)
+void formatLog(char* cpReturn, int iFormatLength, const char* cpLogMessage, ...)
 {
 	va_list arglist;
 
 	va_start(arglist, cpLogMessage);
+	memset(cpReturn, 0, iFormatLength);
 	vsprintf(cpReturn, cpLogMessage, arglist);
 	va_end(arglist);
 }

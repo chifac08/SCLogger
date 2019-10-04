@@ -14,6 +14,6 @@ extern void logIt(LOG_LEVEL logLevel, char* cpMessage);
 extern char* getCurrentLogLevel();
 extern void destroyLogging();
 extern LOG_LEVEL parseLogLevel(char* cpLogLevel);
-extern void formatLog(char* cpReturn, const char* cpLogMessage, ...);
+extern void formatLog(char* cpReturn, int iFormatLength, const char* cpLogMessage, ...);
 
 #endif /* INCL_SCLOGGER_H_ */
