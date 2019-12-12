@@ -40,6 +40,7 @@ static LOG_CONFIG logConfig;
 static int iListSize = 0;
 static logNode* logList = NULL;
 static logNode* lastNode = NULL;
+static FILE* logFile = NULL;
 
 static const char* logLevelString[] = {
 		"FATAL",
@@ -231,7 +232,6 @@ static void writeLog()
  */
 int initLogging(LOG_CONFIG config)
 {
-	FILE* logFile = NULL;
 	int iRet = 0;
 
 	memset(&logConfig, 0, sizeof(LOG_CONFIG));
@@ -300,6 +300,12 @@ char* getCurrentLogLevel()
 void destroyLogging()
 {
 	flushList();
+
+	if(logFile)
+	{
+		fclose(logFile);
+		logFile = NULL;
+	}
 }
 
 /**
