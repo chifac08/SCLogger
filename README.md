@@ -6,4 +6,4 @@ Simple Logging Library for C/C++
 ## Contribute
 
 ## License
-[MIT] (https://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT)
